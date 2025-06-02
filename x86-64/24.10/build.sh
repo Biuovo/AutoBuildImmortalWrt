@@ -34,15 +34,23 @@ PACKAGES="$PACKAGES luci-i18n-argon-config-zh-cn"
 #24.10
 PACKAGES="$PACKAGES luci-i18n-package-manager-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
-PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
 PACKAGES="$PACKAGES luci-app-openclash"
 PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
 PACKAGES="$PACKAGES openssh-sftp-server"
+PACKAGES="$PACKAGES luci-app-frpc"
+PACKAGES="$PACKAGES luci-app-aria2"
+PACKAGES="$PACKAGES luci-app-watchcat"
+PACKAGES="$PACKAGES luci-i18n-ap-modem-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-upnp-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-alist-zh-cn"
 # 增加几个必备组件 方便用户安装iStore
+PACKAGES="$PACKAGES luci-app-netspeedtest"
+PACKAGES="$PACKAGES luci-app-nikki"
+PACKAGES="$PACKAGES tailscale"
 PACKAGES="$PACKAGES fdisk"
 PACKAGES="$PACKAGES script-utils"
 PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
-
+PACKAGES="$PACKAGES luci-app-store"
 # 判断是否需要编译 Docker 插件
 if [ "$INCLUDE_DOCKER" = "yes" ]; then
     PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn"
