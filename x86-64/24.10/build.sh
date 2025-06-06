@@ -43,7 +43,7 @@ PACKAGES="$PACKAGES luci-app-watchcat"
 PACKAGES="$PACKAGES luci-i18n-upnp-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-alist-zh-cn"
 # 增加几个必备组件 方便用户安装iStore
-git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki package/luci-app-nikki
+PACKAGES="$PACKAGES https://github.com/nikkinikki-org/OpenWrt-nikki package/luci-app-nikki
 PACKAGES="$PACKAGES fdisk"
 PACKAGES="$PACKAGES script-utils"
 PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
