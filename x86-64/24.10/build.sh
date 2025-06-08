@@ -61,11 +61,5 @@ if [ $? -ne 0 ]; then
     echo "$(date '+%Y-%m-%d %H:%M:%S') - Error: Build failed!"
     exit 1
 fi
-# add feed
-echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
-# update & install feeds
-./scripts/feeds update -a
-./scripts/feeds install -a
-# make package
-make package/luci-app-nikki/compile
+
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Build completed successfully."
