@@ -128,5 +128,7 @@ uci commit
 FILE_PATH="/etc/openwrt_release"
 NEW_DESCRIPTION="Compiled by wukongdaily"
 sed -i "s/DISTRIB_DESCRIPTION='[^']*'/DISTRIB_DESCRIPTION='$NEW_DESCRIPTION'/" "$FILE_PATH"
+git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki
+git clone --depth=1 https://github.com/linkease/istore
 
 exit 0
