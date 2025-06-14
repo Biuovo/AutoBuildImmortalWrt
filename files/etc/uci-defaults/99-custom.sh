@@ -39,6 +39,8 @@ if curl -s "$mirror/openwrt/24-config-common" | grep -q "^CONFIG_PACKAGE_luci-ap
 fi
 git clone https://$github/JohnsonRan/packages_utils_boltbrowser package/new/boltbrowser
 git clone https://$github/JohnsonRan/packages_net_speedtest-ex package/new/speedtest-ex
+git clone https://$github.com/nikkinikki-org/OpenWrt-nikki
+git clone https://$github.com/linkease/istore
 # 检查配置文件pppoe-settings是否存在 该文件由build.sh动态生成
 SETTINGS_FILE="/etc/config/pppoe-settings"
 if [ ! -f "$SETTINGS_FILE" ]; then
@@ -157,7 +159,4 @@ uci commit
 FILE_PATH="/etc/openwrt_release"
 NEW_DESCRIPTION="Compiled by wukongdaily"
 sed -i "s/DISTRIB_DESCRIPTION='[^']*'/DISTRIB_DESCRIPTION='$NEW_DESCRIPTION'/" "$FILE_PATH"
-git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki
-git clone --depth=1 https://github.com/linkease/istore
-
 exit 0
