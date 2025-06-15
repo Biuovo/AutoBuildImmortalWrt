@@ -37,10 +37,6 @@ if curl -s "$mirror/openwrt/24-config-common" | grep -q "^CONFIG_PACKAGE_luci-ap
     sed -i "s/PKG_BUILD_VERSION:=.*/PKG_BUILD_VERSION:=alpha-$nikki_short_sha/" package/new/openwrt-nikki/nikki/Makefile
     rm -rf nikki
 fi
-git clone https://$github/JohnsonRan/packages_utils_boltbrowser package/new/boltbrowser
-git clone https://$github/JohnsonRan/packages_net_speedtest-ex package/new/speedtest-ex
-git clone https://$github.com/nikkinikki-org/OpenWrt-nikki
-git clone https://$github.com/linkease/istore
 # 检查配置文件pppoe-settings是否存在 该文件由build.sh动态生成
 SETTINGS_FILE="/etc/config/pppoe-settings"
 if [ ! -f "$SETTINGS_FILE" ]; then
@@ -155,6 +151,12 @@ uci delete ttyd.@ttyd[0].interface
 uci set dropbear.@dropbear[0].Interface=''
 uci commit
 
+sleep 10# 开机先停10秒，等pppoe功能起来。
+core_count=$(cat /proc/cpuinfo | grep processor | wc -l)
+# 计算结果
+result=$((core_count * 2 - 1))
+# 将结果写入文件
+echo "$result" > "/sys/class/net/pppoe-wan/queues/rx-0/rps_cpus"
 # 设置编译作者信息
 FILE_PATH="/etc/openwrt_release"
 NEW_DESCRIPTION="Compiled by wukongdaily"
