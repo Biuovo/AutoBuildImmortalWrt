@@ -95,6 +95,13 @@ elif [ "$count" -gt 1 ]; then
    fi
 fi
 
+# Clone community packages to package/community
+mkdir package/community
+pushd package/community
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
+git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki
+git clone --depth=1 https://github.com/linkease/istore
+popd
 # 添加docker zone
 uci add firewall zone
 uci set firewall.@zone[-1].name='docker'
