@@ -40,7 +40,7 @@ PACKAGES="$PACKAGES luci-i18n-frpc-zh-cn"
 PACKAGES="$PACKAGES luci-app-aria2"
 PACKAGES="$PACKAGES luci-app-watchcat"
 PACKAGES="$PACKAGES luci-i18n-upnp-zh-cn"
-PACKAGES="$PACKAGES luci-i18n-alist-zh-cn"
+PACKAGES="$PACKAGES luci-app-openlist"
 # 增加几个必备组件 方便用户安装iStore
 PACKAGES="$PACKAGES fdisk"
 PACKAGES="$PACKAGES script-utils"
